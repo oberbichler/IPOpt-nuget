@@ -18,6 +18,7 @@ jobs:
       - name: Download Ipopt
         run: |
           curl https://github.com/coin-or/Ipopt/releases/download/releases%2F3.14.3/Ipopt-3.14.3-win64-msvs2019-md.zip -L -o ipopt.zip
+          mkdir -p ipopt/bin
           unzip -j ipopt.zip "*/bin/*" -d ipopt/bin
           rm ipopt.zip
 
