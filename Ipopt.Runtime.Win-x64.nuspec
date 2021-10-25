@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>Ipopt.Runtime.Win-x64</id>
+        <version>3.14.3</version>
+        <title>IPOPT</title>
+        <authors>Andreas Waechter, Carl Laird</authors>
+        <owners>Thomas Oberbichler</owners>
+        <repository type="git" url="https://github.com/oberbichler/Ipopt-nuget.git" />
+        <licenseUrl>https://github.com/coin-or/Ipopt/blob/7447c8008c5e8f5b0489461cd2ff14d692c03520/LICENSE</licenseUrl>
+        <projectUrl>https://github.com/coin-or/Ipopt/</projectUrl>
+        <requireLicenseAcceptance>true</requireLicenseAcceptance>
+        <description>COIN-OR Interior Point Optimizer IPOPT</description>
+        <tags></tags>
+        <dependencies>
+            <group targetFramework=".NETFramework4.8" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="Ipopt-3.14.3-win64-msvs2019-md/bin/*.dll" target="lib/net48/" />
+    </files>
+</package>
