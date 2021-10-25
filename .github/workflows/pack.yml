@@ -1,0 +1,28 @@
+name: Pack
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Download Ipopt
+        run: |
+          curl https://github.com/coin-or/Ipopt/releases/download/releases%2F3.14.3/Ipopt-3.14.3-win64-msvs2019-md.zip -L -o ipopt.zip
+          unzip -j ipopt.zip "*/bin/*" -d ipopt/bin
+          rm ipopt.zip
+
+      - name: Pack
+        run: nuget pack ./Ipopt.Runtime.Win-x64.nuspec
+
+      - name: Publish
+        run: dotnet nuget push *.nupkg -s https://nuget.pkg.github.com/${{ github.repository_owner }}/index.json -k ${{ github.token }} --skip-duplicate
