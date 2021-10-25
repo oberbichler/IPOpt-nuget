@@ -17,6 +17,6 @@
         </dependencies>
     </metadata>
     <files>
-        <file src="Ipopt-3.14.3-win64-msvs2019-md/bin/*.dll" target="lib/net48/" />
+        <file src="ipopt/bin/*.dll" target="lib/net48/" />
     </files>
 </package>
